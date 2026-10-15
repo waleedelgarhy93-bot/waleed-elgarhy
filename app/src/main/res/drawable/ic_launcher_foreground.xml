@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Security Shield Outline / Base -->
+    <path
+        android:fillColor="#FFA000"
+        android:pathData="M54,24 L76,32 C76,56 66,74 54,82 C42,74 32,56 32,32 Z" />
+    
+    <!-- Inner Shield (Deep Blue) -->
+    <path
+        android:fillColor="#0D47A1"
+        android:pathData="M54,28 L72,35 C72,54 63,69 54,76 C45,69 36,54 36,35 Z" />
+
+    <!-- Golden Crest / Star at top of shield -->
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M54,34 L56.2,40 L62.5,40.4 L57.6,44.2 L59.3,50.3 L54,46.7 L48.7,50.3 L50.4,44.2 L45.5,40.4 L51.8,40 Z" />
+
+    <!-- Open Book Symbol (Education) in White -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,58 C51,55 46,54 41,54 C39,54 38,54.5 38,55 L38,68 C38,68.5 38.5,69 39,69 C44,69 49,70 52,73 L54,73 C57,70 62,69 67,69 C67.5,69 68,68.5 68,68 L68,55 C68,54.5 67,54 65,54 C60,54 55,55 54,58 Z" />
+
+    <!-- Center spine of the open book -->
+    <path
+        android:fillColor="#FFA000"
+        android:pathData="M53.5,58 L54.5,58 L54.5,72 L53.5,72 Z" />
+</vector>

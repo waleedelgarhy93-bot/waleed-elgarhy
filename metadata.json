@@ -1,0 +1,6 @@
+{
+  "name": "إدارة أمن سمالوط التعليمية",
+  "description": "تطبيق إدارة أمن الإدارة التعليمية بسمالوط لمتابعة المدارس والمعلمين والأحداث الأمنية والتقارير تحت إشراف مستر مصطفى فرغلي.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
