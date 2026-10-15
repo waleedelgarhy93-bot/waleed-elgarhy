@@ -18,6 +18,60 @@ workflows:
         script: |
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/app/local.properties" || true
+      - name: Create dummy google-services.json
+        script: |
+          cd "$CM_BUILD_DIR"
+          if [ ! -f "app/google-services.json" ]; then
+            echo "Creating dummy google-services.json..."
+            cat > app/google-services.json << 'EOF'
+          {
+            "project_info": {
+              "project_number": "000000000000",
+              "project_id": "samalout-security",
+              "storage_bucket": "samalout-security.appspot.com"
+            },
+            "client": [
+              {
+                "client_info": {
+                  "mobilesdk_app_id": "1:000000000000:android:0000000000000000000000",
+                  "android_client_info": {
+                    "package_name": "com.example.samalout_security"
+                  }
+                },
+                "oauth_client": [],
+                "api_key": [
+                  {
+                    "current_key": "AIzaSyDUMMY_KEY_FOR_BUILD"
+                  }
+                ],
+                "services": {
+                  "appinvite_service": {
+                    "other_platform_oauth_client": []
+                  }
+                }
+              }
+            ],
+            "configuration_version": "1"
+          }
+          EOF
+          fi
+          ls -la app/google-services.json
+      - name: Generate debug.keystore
+        script: |
+          cd "$CM_BUILD_DIR"
+          if [ ! -f "debug.keystore" ]; then
+            echo "Generating debug.keystore..."
+            keytool -genkey -v \
+              -keystore debug.keystore \
+              -storepass android \
+              -alias androiddebugkey \
+              -keypass android \
+              -keyalg RSA \
+              -keysize 2048 \
+              -validity 10000 \
+              -dname "CN=Android Debug,O=Android,C=US"
+          fi
+          ls -la debug.keystore
       - name: Generate Gradle Wrapper
         script: |
           cd "$CM_BUILD_DIR"
