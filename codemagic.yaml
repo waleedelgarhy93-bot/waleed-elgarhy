@@ -6,7 +6,7 @@ workflows:
     environment:
       java: 21
       vars:
-        PACKAGE_NAME: "com.example.samalout_security"
+        PACKAGE_NAME: "com.aistudio.samalutedusec.kpxqza"
     triggering:
       events:
         - push
@@ -35,7 +35,7 @@ workflows:
                 "client_info": {
                   "mobilesdk_app_id": "1:000000000000:android:0000000000000000000000",
                   "android_client_info": {
-                    "package_name": "com.example.samalout_security"
+                    "package_name": "com.aistudio.samalutedusec.kpxqza"
                   }
                 },
                 "oauth_client": [],
